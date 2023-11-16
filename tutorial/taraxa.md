@@ -66,7 +66,7 @@ docker-compose logs
 
 You can have multiple nodes on the same IP address, but they need to occupy different ports. On the first node, you can just leave everything by default in the docker image.&#x20;
 
-For subsequent nodes, you'll need to map the default ports to different ports (each node a different mapping, of course). You should create a new folder like $home/testnet2 and change port settings in the `docker-compose.yml` file as follow:
+For subsequent nodes, you'll need to map the default ports to different ports (each node a different mapping, of course). For example, you may want to run the 2nd node, you should create a new folder like `$home/testnet2` and change port settings in the `docker-compose.yml` file as follow:
 
 ```
 version: "3"
