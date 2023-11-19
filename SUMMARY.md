@@ -6,3 +6,4 @@
 
 * [✅ taraxa](tutorial/taraxa.md)
 * [✅ ar io](tutorial/ar-io.md)
+* [✅ mantra](tutorial/mantra.md)
