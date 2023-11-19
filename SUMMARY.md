@@ -5,4 +5,4 @@
 ## tutorial
 
 * [✅ taraxa](tutorial/taraxa.md)
-* [⏸ ar io](tutorial/ar-io.md)
+* [✅ ar io](tutorial/ar-io.md)
