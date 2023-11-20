@@ -103,10 +103,10 @@ volumes:
 
 [https://community.taraxa.io/node](https://community.taraxa.io/node)
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### see if you’re on the top
 
 [https://testnet.explorer.taraxa.io/nodes/](https://testnet.explorer.taraxa.io/nodes/)
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>

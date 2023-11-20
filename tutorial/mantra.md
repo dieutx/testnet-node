@@ -145,13 +145,101 @@ Visit [https://explorer.testnet.mantrachain.io/mantrachain](https://explorer.tes
 
 ## convert node into a validator
 
+You can, either, create a new account or import an existing account.
 
+### **create keys**
 
+Create a key file.&#x20;
 
+<pre class="language-bash"><code class="lang-bash"><strong>mantrachaind config keyring-backend file
+</strong></code></pre>
 
+Generate a new public key with mnemonic phrase.
 
+```bash
+mantrachaind keys add <your-moniker-keys>
+```
 
+where `<your-moniker-keys>`is the moniker and can be any valid string name  (e.g. `validator01-keys`)
 
+The above command will produce output like this:
+
+```
+- address: mantra1q55nrzygas0nespfu8mwt2yntq8gxll3kyug82
+  name: validator01-keys
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A/YebpAX8AqUNcNXcqIy53fJo8BGFCSaQA5A0XQWMlCG"}'
+  type: local
+	
+	
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+	
+expect kid unfair uniform calm debris meadow despair vintage arrive walnut vast upset cart step funny truth vault naive note capable spray shine human
+```
+
+_**KEEP THE MNEMONIC PHRASE IN A SAFE PLACE!**_
+
+### **import keys**
+
+Alternatively, if you already have an existing mnemonic that you'd like to use, then run the following:
+
+```bash
+$ mantrachaind keys add <your-moniker-keys> --recover
+```
+
+### faucet
+
+[https://faucet.testnet.mantrachain.io/](https://faucet.testnet.mantrachain.io/)
+
+1 IP address can get 1uaum every 24 hours. In case you need to transfer uaum tokens between wallets, follow this command
+
+```
+mantrachaind tx bank send sender_address receiver_address amount_to_send --gas="auto" --gas-adjustment 2 --gas-prices="0.0001uaum" -y
+```
+
+Replace `sender_address` `receiver_address` `amount_to_send` with your values
+
+### execute "create-validator" transaction
+
+You can create new validator from the public key of your node with the following command:
+
+```bash
+mantrachaind tx staking create-validator \
+  --amount=1000000uaum \
+  --pubkey=$(mantrachaind tendermint show-validator) \
+  --moniker=<MONIKER> \
+  --chain-id=mantrachain-testnet-1 \
+  --commission-rate="0.10" \
+  --commission-max-rate="0.20" \
+  --commission-max-change-rate="0.01" \
+  --min-self-delegation="1000000" \
+  --gas="auto" \
+  --gas-adjustment 2 \
+  --gas-prices="0.0001uaum" \
+  --from=<KEY-NAME>
+```
+
+### execute "edit-validator" transaction
+
+<pre class="language-bash"><code class="lang-bash">mantrachaind tx staking edit-validator \
+  --new-moniker=&#x3C;NEW-MONIKER> \
+  --website="https://your-website.com" \
+<strong>  --details="Some impressive info about your validator." \
+</strong>  --chain-id=mantrachain-testnet-1 \
+  --commission-rate="0.10" \
+  --gas="auto" \
+  --gas-adjustment 2 \
+  --gas-prices="0.0001uaum" \
+  --from=&#x3C;KEY-NAME>
+</code></pre>
+
+## explorer
+
+[https://explorer.indonode.net/mantra-testnet/staking](https://explorer.indonode.net/mantra-testnet/staking)
+
+[https://explorer.testnet.mantrachain.io/mantrachain](https://explorer.testnet.mantrachain.io/mantrachain)
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 
 
